@@ -24,12 +24,15 @@ $(function () {
         gerarImagem($(".nome").text());
     });
 
+    const buttonRecortar = document.getElementById('button_recortar');
+    
 
     function crop(image)
     {
         return new Cropper(image, {
             dragMode:'move',
             preview:'#img-preview',
+            background:false,
 
         })
     }
@@ -84,18 +87,33 @@ $(function () {
         const urlImage = previewImageUpload("#uploadPhoto");
         const imgPreview = $(".img-preview");
         const imgAssinatura = $(".img-assinatura");
-
+       
         
         if (!urlImage) return;
 
         imgPreview.attr("src", urlImage);     
         setTimeout(()=>{ 
-            let cropper = crop($(".img-preview")[0]); //aonde implantei o cropper
+            //aonde implantei o cropper
+            let cropper = crop($(".img-preview")[0]);
+            let privewCrop = document.querySelector("#img-assinatura");
+            buttonRecortar.addEventListener('click', event =>{
+                let croppedCanvas = cropper.getCroppedCanvas();
+                let croppedImage = croppedCanvas.toDataURL();
+                imgAssinatura.attr("src", croppedImage);
+            })
+
+            let buttonDelete = document.querySelector(".delete");
+            buttonDelete.addEventListener('click', event =>{
+                cropper.destroy();
+                
+            })
+
+            // imgAssinatura.attr("src", urlImage);
+            $(".delete").addClass("active");
+            $(".add-foto .text").text("Alterar foto");     
+            
         },200)
 
-        imgAssinatura.attr("src", urlImage);
-        $(".delete").addClass("active");
-        $(".add-foto .text").text("Alterar foto");
     });
 
     $(".delete").click(function(){
@@ -103,7 +121,8 @@ $(function () {
         const imgAssinatura = $(".img-assinatura");
         var baseImage = "./assets/img/profile.png";
         var signatureImage = "./assets/img/icone-vp-assinatura.png";
-
+        
+        
         imgPreview.attr("src", baseImage);
         imgAssinatura.attr("src", signatureImage);
         $("#uploadPhoto").val("");

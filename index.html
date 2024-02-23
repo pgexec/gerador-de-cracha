@@ -26,7 +26,7 @@
         <div class="inner-container">
 
              <!-- DIV DO CROPPER E DO PREVIEW -->
-            <div class="container" id="box-crop">    
+            <!-- <div class="container" id="box-crop">    
                 <div id="preview-crop"></div>  
                 <div id="box">
                     <h2 id="h2-avatar">Avatar</h2>
@@ -34,7 +34,7 @@
                         <input type="file" name="file" id="avatar-image">
                     </form>
                 </div> 
-            </div> 
+            </div>  -->
 
             <!-- <form action="crop.php" method="post" enctype ="multipart/form-data">
                <p>Upload Image: <input type="file" name="image" id="image"/></p> 
@@ -61,6 +61,7 @@
                     <label class="btn secondary md add-foto" for="uploadPhoto">
                         <div class="text">Adicionar foto</div>
                     </label>
+                    <button id="button_recortar">recortar</button>
                 </div>
                 <form class="form">
                     <div class="row">
@@ -128,6 +129,7 @@
                     <div class="assinatura">
                         <div class="left">
                             <figure>
+                                <div id="preview-img"></div>
                                 <img class="img-assinatura" src="./assets/img/icone-vp-assinatura.png" alt="Logo">
                             </figure>
                         </div>
