@@ -25,7 +25,39 @@ $(function () {
     });
 
     const buttonRecortar = document.getElementById('button_recortar');
+    const ulrUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/';
+    const uf = document.getElementById('setor');
+    const cidade = document.getElementById('cargo');
+
+
+
+    uf.addEventListener('change', async function(){
+        const urlCidades = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/'+uf.value+'/municipios'
+        const request = await fetch(urlCidades);
+        const response = await request.json();
+        let options = '';
+        response.forEach(function(cidades){
+            options += '<option>'+cidades.nome+'</option>'
+        })
+        cidade.innerHTML = options;
+    })
     
+
+
+
+
+    window.addEventListener('load', async()=>{
+        const request = await fetch(ulrUF);
+        const response = await request.json();
+        console.log(response);
+
+        const options = document.createElement("optgroup")
+        options.setAttribute('label','UFs')
+        response.forEach(function(uf){
+            options.innerHTML += '<option>' + uf.sigla + '</options>'
+        })
+        uf.append(options);
+    })
 
     function crop(image)
     {
