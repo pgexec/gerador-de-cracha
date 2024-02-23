@@ -24,6 +24,15 @@ $(function () {
         gerarImagem($(".nome").text());
     });
 
+
+    function crop(image)
+    {
+        return new Cropper(image, {
+            dragMode:'move',
+            preview:'#img-preview',
+
+        })
+    }
     
 
     function gerarImagem(nome) {
@@ -45,6 +54,8 @@ $(function () {
                 document.body.appendChild(a);
                 a.click();
                 a.remove()
+            
+
             };
             xhr.open('GET', canvas.toDataURL("image/png", 1.0));
             xhr.send();
@@ -61,10 +72,12 @@ $(function () {
             $(".msg .text").text("Escolha uma imagem menor que 3MB");
             return false;
         }
+        
 
         if (!file) return false;
-
+        
         return URL.createObjectURL(file);
+        
     }
 
     $("#uploadPhoto").on("change", function () {
@@ -72,9 +85,14 @@ $(function () {
         const imgPreview = $(".img-preview");
         const imgAssinatura = $(".img-assinatura");
 
+        
         if (!urlImage) return;
 
-        imgPreview.attr("src", urlImage);
+        imgPreview.attr("src", urlImage);     
+        setTimeout(()=>{ 
+            let cropper = crop($(".img-preview")[0]); //aonde implantei o cropper
+        },200)
+
         imgAssinatura.attr("src", urlImage);
         $(".delete").addClass("active");
         $(".add-foto .text").text("Alterar foto");
@@ -111,26 +129,16 @@ $(function () {
 
 
 
-function crop(image)
-{
-    return new Cropper(image, {
-        preview:'#preview-crop',background:false,
-        data:
-        {
-            width:200,
-            height:200
-        }
-    })
-}
 
-const reader = new FileReader;
 
-reader.onload = function(Event)
-{
-    const previewImage = document.createElement('img');
-    previewImage.Id = 'preview-image';
-    previewImage.src = Event.target.result;
-    h2Avatar.insertAdjacentElement('afterend', previewImage);
-}
+// const reader = new FileReader;
 
-reader.readAsDataURL(avatarImage.files[0]);
+// reader.onload = function(Event)
+// {
+//     const previewImage = document.createElement('img');
+//     previewImage.Id = 'preview-image';
+//     previewImage.src = Event.target.result;
+//     h2Avatar.insertAdjacentElement('afterend', previewImage);
+// }
+
+// reader.readAsDataURL(avatarImage.files[0]);
