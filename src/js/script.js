@@ -137,6 +137,17 @@ $(function () {
             
             let cropper = crop($(".img-preview")[0]);
             let privewCrop = document.querySelector("#img-assinatura");
+
+            $(".delete").off().click(function()
+            {
+
+                imgAssinatura.attr("src", signatureImage);
+                $(".delete").addClass("active");
+                if(cropper)
+                {
+                    cropper.destroy();
+                }
+            })
             buttonRecortar.addEventListener('click', event =>{
 
                 let croppedCanvas = cropper.getCroppedCanvas();
