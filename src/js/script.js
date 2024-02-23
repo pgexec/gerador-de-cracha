@@ -24,11 +24,15 @@ $(function () {
         gerarImagem($(".nome").text());
     });
 
+
+
+    
     const buttonRecortar = document.getElementById('button_recortar');
+
     const ulrUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/';
     const uf = document.getElementById('setor');
     const cidade = document.getElementById('cargo');
-
+    
 
 
     uf.addEventListener('change', async function(){
@@ -49,7 +53,7 @@ $(function () {
     window.addEventListener('load', async()=>{
         const request = await fetch(ulrUF);
         const response = await request.json();
-        console.log(response);
+       
 
         const options = document.createElement("optgroup")
         options.setAttribute('label','UFs')
@@ -68,6 +72,8 @@ $(function () {
 
         })
     }
+
+
     
     // ESSA FUNÇÃO É PARA GERAR A IMAGEM PARA BAIXAR BASICAMENTE
     function gerarImagem(nome) {
@@ -115,6 +121,7 @@ $(function () {
         
     }
 
+   
     //onde coloca a imagem no site
     $("#uploadPhoto").on("change", function () {
         const urlImage = previewImageUpload("#uploadPhoto");
@@ -131,17 +138,16 @@ $(function () {
             let cropper = crop($(".img-preview")[0]);
             let privewCrop = document.querySelector("#img-assinatura");
             buttonRecortar.addEventListener('click', event =>{
+
                 let croppedCanvas = cropper.getCroppedCanvas();
                 let croppedImage = croppedCanvas.toDataURL();
+
                 imgAssinatura.attr("src", croppedImage);
                 cropper.destroy();
                 
             })
             
-             let buttonDelete = document.querySelector(".delete");
-                buttonDelete.addEventListener('click', event =>{
-                    
-                })
+         
 
 
             $(".delete").addClass("active");
@@ -152,10 +158,12 @@ $(function () {
     });
 
     $(".delete").click(function(){
+        
         const imgPreview = $(".img-preview");
         const imgAssinatura = $(".img-assinatura");
         var baseImage = "./assets/img/profile.png";
         var signatureImage = "./assets/img/icone-vp-assinatura.png";
+        
         
         imgPreview.attr("src", baseImage);
         imgAssinatura.attr("src", signatureImage);

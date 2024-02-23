@@ -33,6 +33,11 @@
   margin: 0 auto;
 }
 
+#cidade
+{
+  margin: 20px;
+}
+
 .main {
   padding: 48px 24px;
 }
@@ -426,8 +431,13 @@
 }
 #setor
 {
-  margin-top: 10px;
+  margin-left: 10px;
   padding: 5px;
+}
+
+#cargo
+{
+  margin-left: 10px;
 }
 .main .content .sign-container .assinatura .right .top .name .arrow {
   position: absolute;
