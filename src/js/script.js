@@ -37,18 +37,18 @@ $(function () {
         })
     }
     
-
+    // ESSA FUNÇÃO É PARA GERAR A IMAGEM PARA BAIXAR BASICAMENTE
     function gerarImagem(nome) {
         window.devicePixelRatio = 2;
         html2canvas(document.querySelector('.assinatura'),{
             width: 750,
-            height: 240,
+            height: 600,
             backgroundColor: null,
             scale: 3
         }).then(function (canvas) {
             var name = 'assinatura-' + nome.toLowerCase().replace(" ", "-");
-            let xhr = new XMLHttpRequest();
-            xhr.responseType = 'blob';
+            let xhr = new XMLHttpRequest(); 
+            xhr.responseType = 'blob'; //aqui ele está criando um objeto binário grande
             xhr.onload = function () {
                 let a = document.createElement('a');
                 a.href = window.URL.createObjectURL(xhr.response);
@@ -83,6 +83,7 @@ $(function () {
         
     }
 
+    //onde coloca a imagem no site
     $("#uploadPhoto").on("change", function () {
         const urlImage = previewImageUpload("#uploadPhoto");
         const imgPreview = $(".img-preview");
@@ -91,24 +92,26 @@ $(function () {
         
         if (!urlImage) return;
 
-        imgPreview.attr("src", urlImage);     
+        imgPreview.attr("src", urlImage);
+        //aonde implantei o cropper     
         setTimeout(()=>{ 
-            //aonde implantei o cropper
+            
             let cropper = crop($(".img-preview")[0]);
             let privewCrop = document.querySelector("#img-assinatura");
             buttonRecortar.addEventListener('click', event =>{
                 let croppedCanvas = cropper.getCroppedCanvas();
                 let croppedImage = croppedCanvas.toDataURL();
                 imgAssinatura.attr("src", croppedImage);
-            })
-
-            let buttonDelete = document.querySelector(".delete");
-            buttonDelete.addEventListener('click', event =>{
                 cropper.destroy();
                 
             })
+            
+             let buttonDelete = document.querySelector(".delete");
+                buttonDelete.addEventListener('click', event =>{
+                    
+                })
 
-            // imgAssinatura.attr("src", urlImage);
+
             $(".delete").addClass("active");
             $(".add-foto .text").text("Alterar foto");     
             
@@ -121,7 +124,6 @@ $(function () {
         const imgAssinatura = $(".img-assinatura");
         var baseImage = "./assets/img/profile.png";
         var signatureImage = "./assets/img/icone-vp-assinatura.png";
-        
         
         imgPreview.attr("src", baseImage);
         imgAssinatura.attr("src", signatureImage);
