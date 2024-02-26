@@ -328,6 +328,7 @@
   align-items: center;
   justify-content: center;
   border: none;
+  z-index: 5;
 }
 
 .main .content .sign-container {
@@ -340,6 +341,7 @@
   background-image: url(/assets/img/CRACHA\ \(1\).png);
   background-size: cover;
   background-position: center;
+  z-index: 5;
  
 }
 
@@ -479,7 +481,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
-/* #setor
+#setor
 {
   margin-left: 10px;
   padding: 5px;
@@ -489,7 +491,7 @@
 {
   margin-left: 10px;
   
-} */
+}
 .assinatura
 {
   display: flex;
@@ -514,11 +516,11 @@ figure{
   justify-content: center;
   align-items: center;
   margin-top: -89px;
+  z-index: 1;
   
 }
 .img-assinatura
 {
-  
   width: 240px;
   height: 320px;
   margin-top:240px;
@@ -535,6 +537,8 @@ figure{
   justify-content: center;
   width: 200px;
   height: 100px;
+  z-index: auto;
+  position: relative;
   
 }
 

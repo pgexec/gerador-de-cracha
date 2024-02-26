@@ -86,8 +86,8 @@ $(function () {
     function gerarImagem(nome) {
         window.devicePixelRatio = 2;
         html2canvas(document.querySelector('.sign-container'), {
-            width: 700,
-            height: 850,
+            width: 600,
+            height: 800,
             backgroundColor: null,
             scale: 3
         }).then(function (canvas) {
@@ -167,7 +167,7 @@ $(function () {
         const imgPreview = $(".img-preview");
         const imgAssinatura = $(".img-assinatura");
         var baseImage = "./assets/img/profile.png";
-        var signatureImage = "./assets/img/profile2.png";
+        var signatureImage = "./assets/img/model-profile.png";
         
         
     
