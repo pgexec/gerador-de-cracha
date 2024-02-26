@@ -10,7 +10,7 @@
   text-decoration: none;
   outline: none;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
+  font-weight: 700;
 }
 .nome
 {
@@ -317,7 +317,7 @@
 }
 
 .main .content.preview {
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(255, 255, 255);
   
   background-size: cover;
   background-position: center;
@@ -557,6 +557,11 @@ figure{
   font-size: 20px;
 }
 
+.barra
+{margin-left: 10px;
+  margin-right: 10px;
+  color: #0E0E10;
+}
 
 .main .content .sign-container .assinatura .right .top .name .arrow {
   position: absolute;
@@ -721,7 +726,7 @@ figure{
 }
 
 .btn.primary {
-  background-color: #5619B4;
+  background-color: #0095da;
 }
 
 .btn.primary .text {

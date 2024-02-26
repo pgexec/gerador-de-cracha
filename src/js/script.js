@@ -86,8 +86,8 @@ $(function () {
     function gerarImagem(nome) {
         window.devicePixelRatio = 2;
         html2canvas(document.querySelector('.sign-container'), {
-            width: 600,
-            height: 700,
+            width: 700,
+            height: 850,
             backgroundColor: null,
             scale: 3
         }).then(function (canvas) {
