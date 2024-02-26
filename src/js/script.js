@@ -122,6 +122,8 @@ $(function () {
     }
 
    
+
+    let cropper;
     //onde coloca a imagem no site
     $("#uploadPhoto").on("change", function () {
         const urlImage = previewImageUpload("#uploadPhoto");
@@ -134,41 +136,29 @@ $(function () {
         imgPreview.attr("src", urlImage);
         //aonde implantei o cropper     
         setTimeout(()=>{ 
-            
-            let cropper = crop($(".img-preview")[0]);
+            if(cropper)
+            {
+                cropper.destroy();
+            }
+            cropper = crop($(".img-preview")[0]);
             let privewCrop = document.querySelector("#img-assinatura");
 
-            $(".delete").off().click(function()
-            {
-
-                imgAssinatura.attr("src", signatureImage);
-                $(".delete").addClass("active");
-                if(cropper)
-                {
-                    cropper.destroy();
-                }
-            })
             buttonRecortar.addEventListener('click', event =>{
 
                 let croppedCanvas = cropper.getCroppedCanvas();
                 let croppedImage = croppedCanvas.toDataURL();
-
-                imgAssinatura.attr("src", croppedImage);
-                cropper.destroy();
-                
+                imgAssinatura.attr("src", croppedImage);      
             })
-            
-         
-
-
-            $(".delete").addClass("active");
-            $(".add-foto .text").text("Alterar foto");     
-            
+                
         },200)
-
+        
+        $(".delete").addClass("active");
+        $(".add-foto .text").text("Alterar foto");  
+           
     });
 
     $(".delete").click(function(){
+        
         
         const imgPreview = $(".img-preview");
         const imgAssinatura = $(".img-assinatura");
@@ -176,11 +166,18 @@ $(function () {
         var signatureImage = "./assets/img/icone-vp-assinatura.png";
         
         
+    
         imgPreview.attr("src", baseImage);
         imgAssinatura.attr("src", signatureImage);
         $("#uploadPhoto").val("");
         $(this).removeClass("active");
         $(".add-foto .text").text("Adicionar foto");
+
+        if(cropper)
+        {
+            cropper.destroy();
+            cropper = null;
+        }
     });
 
     // define as máscaras de formulário
