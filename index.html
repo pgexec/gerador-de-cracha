@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="./src/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" integrity="sha512-hvNR0F/e2J7zPPfLC9auFe3/SE0yG4aJCOd/qxew74NN7eyiSKjr7xJJMu1Jy2wf7FXITpWS1E/RY8yzuXN7VA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/styles/imgareaselect.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js" integrity="sha512-9KkIqdfN7ipEW6B6k+Aq20PV31bjODg4AA52W+tYtAE0jE0kMx49bjJ3FgvS56wzmyfMUHbQ4Km2b7l9+Y/+Eg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -
     <script src="./src/js/html2canvas.min.js"></script>
@@ -66,7 +68,7 @@
                 <form class="form">
                     <div class="row">
                         <div class="input">
-                            <input type="text" id="nome" placeholder="Nome" required>
+                            <input type="text" id="nome" placeholder="Nome" required maxlength="20">
                             <label for="nome">Nome</label>
                         </div>
                         <!-- <div class="input">
@@ -113,7 +115,8 @@
                             <div class="cargo-setor">
                                 <div class="cidade-estado">
                                     <div class="cargo">Cidade</div>
-                                    <div class="setor">Estado</div>
+                                    
+                                    <div class="setor"> Estado</div>
                                 </div>
                                 <div class="divider"></div>
                             </div>

@@ -9,6 +9,8 @@
   color: #56677D;
   text-decoration: none;
   outline: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
 }
 .nome
 {
@@ -477,7 +479,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
-#setor
+/* #setor
 {
   margin-left: 10px;
   padding: 5px;
@@ -487,7 +489,7 @@
 {
   margin-left: 10px;
   
-}
+} */
 .assinatura
 {
   display: flex;
@@ -498,26 +500,29 @@
 
 .cidade-estado .cargo{
   color: #0E0E10;
+  font-size: 20px;
 }
 .cidade-estado .cargo .setor
 {
   color: #0E0E10;
 }
 
+
+
 figure{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -89px;
   
 }
 .img-assinatura
 {
   
-  width: 210px;
-  height: 285px;
-  margin-top: 129px;
+  width: 240px;
+  height: 320px;
+  margin-top:240px;
   display: flex;
-  overflow: hidden;
   align-items: center;
   justify-content: center;
 }
@@ -529,7 +534,13 @@ figure{
   align-items: center;
   justify-content: center;
   width: 200px;
-  height: 200px;
+  height: 100px;
+  
+}
+
+.nome
+{
+  font-size: 25px;
   
 }
 
@@ -537,9 +548,13 @@ figure{
 .top{
   display: flex;
   flex-direction: column;
-  gap: 20px;
   color: black;
-
+  gap: 20px;
+}
+.setor
+{
+  color: black;
+  font-size: 20px;
 }
 
 
