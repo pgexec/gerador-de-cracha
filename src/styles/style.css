@@ -10,7 +10,29 @@
   text-decoration: none;
   outline: none;
 }
+.nome
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
 
+}
+.cargo{
+  display: flex;
+  align-items: center; 
+  justify-content: center;  
+}
+.setor{
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+.cidade-estado
+{
+  display: flex;
+  justify-content: center;
+}
 /* aqui está o css do CROPPE */
 #box-crop
 {
@@ -19,7 +41,7 @@
 }
 #preview-crop
 {
-  border: solid 2px rgb(192, 0, 0);
+  border: solid 2px rgb(14, 2, 2);
   background-color: #fefefe;
   display: none;
   width:200px;
@@ -40,6 +62,10 @@
 
 .main {
   padding: 48px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .main .title {
@@ -289,14 +315,30 @@
 }
 
 .main .content.preview {
-  background-color: red;
+  background-color: rgb(255, 0, 0);
+  
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
 }
 
 .main .content .sign-container {
-  width: 100%;
-  height: 500px;
-  overflow-x: auto;
+  width: 400px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(/assets/img/CRACHA\ \(1\).png);
+  background-size: cover;
+  background-position: center;
+ 
 }
 
 .main .content .sign-container::-webkit-scrollbar {
@@ -344,20 +386,26 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+ 
+  flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 4px solid #FFFFFF;
+  border: 5px solid #FFFFFF;
+
 }
 
 .main .content .sign-container .assinatura .left figure img {
-  max-width: 100%;
+  max-width:100%;
   min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+     display: flex;
+     align-items: center;
+     justify-content: center;
 }
 
 .main .content .sign-container .assinatura .right {
@@ -378,7 +426,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: #f5eee5;
 }
 
 .main .content .sign-container .assinatura .right::after {
@@ -438,7 +486,63 @@
 #cargo
 {
   margin-left: 10px;
+  
 }
+.assinatura
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.cidade-estado .cargo{
+  color: #0E0E10;
+}
+.cidade-estado .cargo .setor
+{
+  color: #0E0E10;
+}
+
+figure{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.img-assinatura
+{
+  
+  width: 210px;
+  height: 285px;
+  margin-top: 129px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-container
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  
+}
+
+/* div que controla nome da pessoa, cidade e estado */
+.top{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: black;
+
+}
+
+
 .main .content .sign-container .assinatura .right .top .name .arrow {
   position: absolute;
   left: -24px;

@@ -66,9 +66,16 @@ $(function () {
     function crop(image)
     {
         return new Cropper(image, {
-            dragMode:'move',
+            dragmode: 'move',
+            viewMode: 1,
+            aspectRatio: 3 / 4,
+            cropBoxResizable:true,
             preview:'#img-preview',
             background:false,
+            // data:{
+            //     width:300,
+            //     height:400,
+            // }
 
         })
     }
@@ -78,28 +85,20 @@ $(function () {
     // ESSA FUNÇÃO É PARA GERAR A IMAGEM PARA BAIXAR BASICAMENTE
     function gerarImagem(nome) {
         window.devicePixelRatio = 2;
-        html2canvas(document.querySelector('.assinatura'),{
-            width: 750,
-            height: 600,
+        html2canvas(document.querySelector('.sign-container'), {
+            width: 600,
+            height: 700,
             backgroundColor: null,
             scale: 3
         }).then(function (canvas) {
             var name = 'assinatura-' + nome.toLowerCase().replace(" ", "-");
-            let xhr = new XMLHttpRequest(); 
-            xhr.responseType = 'blob'; //aqui ele está criando um objeto binário grande
-            xhr.onload = function () {
-                let a = document.createElement('a');
-                a.href = window.URL.createObjectURL(xhr.response);
-                a.download = name + '.png';
-                a.style.display = 'none';
-                document.body.appendChild(a);
-                a.click();
-                a.remove()
-            
-
-            };
-            xhr.open('GET', canvas.toDataURL("image/png", 1.0));
-            xhr.send();
+            let a = document.createElement('a');
+            a.href = canvas.toDataURL("image/png", 1.0);
+            a.download = name + '.png';
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
         });
     }
 
@@ -108,7 +107,7 @@ $(function () {
         const input = document.querySelector(fileInput);
         let file = input.files[0];
 
-        if (file.size > 3145728) {
+        if (file.size > 113145728) {
             $(".msg").addClass("on");
             $(".msg .text").text("Escolha uma imagem menor que 3MB");
             return false;
@@ -145,7 +144,12 @@ $(function () {
 
             buttonRecortar.addEventListener('click', event =>{
 
-                let croppedCanvas = cropper.getCroppedCanvas();
+                let croppedCanvas = cropper.getCroppedCanvas(
+                    {
+                        width:300,
+                        height:400,
+                    }
+                );
                 let croppedImage = croppedCanvas.toDataURL();
                 imgAssinatura.attr("src", croppedImage);      
             })
@@ -163,7 +167,7 @@ $(function () {
         const imgPreview = $(".img-preview");
         const imgAssinatura = $(".img-assinatura");
         var baseImage = "./assets/img/profile.png";
-        var signatureImage = "./assets/img/icone-vp-assinatura.png";
+        var signatureImage = "./assets/img/profile2.png";
         
         
     
