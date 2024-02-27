@@ -23,7 +23,8 @@
 .cargo{
   display: flex;
   align-items: center; 
-  justify-content: center;  
+  justify-content: center; 
+  
 }
 .setor{
   display: flex;
@@ -119,7 +120,11 @@
   font: 700 24px/32px "Sora", sans-serif;
   color: #0E0E10;
 }
-
+.content
+{
+  background-color: #0095da5e; 
+  height: 400px;
+}
 .main .content {
   width: 100%;
   display: -webkit-box;
@@ -268,14 +273,15 @@
           align-items: center;
 }
 
-
+/* mexe com os labels dos inputs */
 .main .content .form .row .input label {
-  color: #0095DA;
+  color: #ffffff;
   pointer-events: none;
   -webkit-transition: .16s linear;
   transition: .16s linear;
 }
 
+/* mexe com o inputs */
 .main .content .form .row .input input {
   position: absolute;
   inset: 0;
@@ -285,7 +291,7 @@
   -webkit-transition: .16s linear;
   transition: .16s linear;
   font-weight: 600;
-  color: #0095DA;
+  color: #1d1d1d;
 }
 
 .main .content .form .row .input input:-webkit-autofill {
@@ -329,6 +335,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   border: none;
   z-index: 5;
 }
@@ -356,12 +363,14 @@
 {
   margin-left: 10px;
   padding: 5px;
+  cursor: pointer;
 
 }
 
 #cargo
 {
   margin-left: 10px;
+  cursor: pointer;
   
 }
 .assinatura
@@ -437,6 +446,10 @@ figure{
   position: relative;
   
 }
+.foto
+{
+  border: solid 5px white;
+}
 
 .nome
 {
@@ -499,15 +512,6 @@ figure{
   gap: 0px;
 }
 
-.main .content .sign-container .assinatura .right .bottom .mail {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-}
 
 
 
@@ -579,6 +583,7 @@ figure{
 
 .btn.primary {
   background-color: #0095da;
+  width: 50%;
 }
 
 .btn.primary .text {
@@ -586,8 +591,18 @@ figure{
 }
 
 .btn.secondary {
-  background-color: transparent;
-  border: 1px solid #0095da;
+  /* background-color: transparent; */
+  border: 1px solid #000000;
+}
+.btn.secondary
+{
+  background-color: #0095DA;
+}
+
+
+.btn.secondary:hover
+{
+  background-color: #025e88;
 }
 
 .btn.secondary::after {
@@ -595,7 +610,7 @@ figure{
 }
 
 .btn.secondary .text {
-  color: #0095da;
+  color: #ffffff;
 }
 
 .btn.disabled, .btn:disabled {
