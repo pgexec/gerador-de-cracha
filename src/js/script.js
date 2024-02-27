@@ -1,7 +1,15 @@
 $(function () {
 
     $("#nome").on("input", function () {
-        $(".nome").text($(this).val());
+        let valor = $(this).val();
+        if(valor ==="")
+        {
+            $(".nome").text("Seu Nome");
+        }
+        else
+        {
+            $(".nome").text($(this).val());
+        }    
     });
 
     $("#cargo").on("input", function () {
@@ -26,6 +34,7 @@ $(function () {
 
 
 
+
     
     const buttonRecortar = document.getElementById('button_recortar');
 
@@ -46,7 +55,6 @@ $(function () {
         cidade.innerHTML = options;
     })
     
-
 
 
 
@@ -80,8 +88,9 @@ $(function () {
         })
     }
 
-
     
+    atualizarNome();
+
     // ESSA FUNÇÃO É PARA GERAR A IMAGEM PARA BAIXAR BASICAMENTE
     function gerarImagem(nome) {
         window.devicePixelRatio = 2;
