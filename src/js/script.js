@@ -8,25 +8,19 @@ $(function () {
         }
         else
         {
-            $(".nome").text($(this).val());
+            
+            $(".nome").text($(this).val().toUpperCase());
         }    
     });
 
     $("#cargo").on("input", function () {
-        $(".cargo").text($(this).val());
+        $(".cargo").text($(this).val().toUpperCase());
     });
 
     $("#setor").on("input", function () {
         $(".setor").text($(this).val());
     });
 
-    $("#telefone").on("keyup", function () {
-        $(".telefone").text($(this).val());
-    });
-
-    $("#email").on("input", function () {
-        $(".email").text($(this).val());
-    });
 
     $(".baixar").on("click", function (e) {
         gerarImagem($(".nome").text());
@@ -89,7 +83,7 @@ $(function () {
     }
 
     
-    atualizarNome();
+    
 
     // ESSA FUNÇÃO É PARA GERAR A IMAGEM PARA BAIXAR BASICAMENTE
     function gerarImagem(nome) {
@@ -208,6 +202,41 @@ $(function () {
 });
 
 
+
+
+//criei aqui uma mask para caracteres do nome da pessoa
+
+let nome = document.getElementById('nome');
+let spanAlert = document.createElement('span');
+
+function alertCaracter(nome)
+{
+    let alert = document.querySelector('.alert');
+    let numb_string = nome.value.length;
+    if(numb_string == 20)
+    {
+        nome.style.borderColor ="red";
+        spanAlert.style.color ='red';
+        spanAlert.style.fontSize = "10px";
+        spanAlert.innerHTML = "você chegou no limite de 20 caracteres";
+        if(!spanAlert.parentNode)
+        {
+            alert.insertAdjacentElement("afterend", spanAlert); 
+        }
+    }else{
+        nome.style.borderColor ="gray";
+        if(spanAlert.parentNode)
+        {
+            spanAlert.remove();
+        }
+    }
+}
+
+
+
+nome.addEventListener('input', function(){
+    alertCaracter(nome);
+})
 
 
 
