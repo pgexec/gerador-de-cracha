@@ -56,6 +56,8 @@
   max-width: 800px;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   
 
 }
@@ -69,7 +71,7 @@
   padding: 48px 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -124,6 +126,7 @@
   display: -ms-flexbox;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -265,8 +268,9 @@
           align-items: center;
 }
 
+
 .main .content .form .row .input label {
-  color: #7A899F;
+  color: #0095DA;
   pointer-events: none;
   -webkit-transition: .16s linear;
   transition: .16s linear;
@@ -277,15 +281,15 @@
   inset: 0;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid #CDD6E0;
+  border-bottom: 2px solid #1c5da7;
   -webkit-transition: .16s linear;
   transition: .16s linear;
   font-weight: 600;
-  color: #0E0E10;
+  color: #0095DA;
 }
 
 .main .content .form .row .input input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 56px white inset;
+  -webkit-box-shadow: 0 0 0 56px rgb(255, 255, 255) inset;
 }
 
 .main .content .form .row .input input::-webkit-input-placeholder {
@@ -352,6 +356,7 @@
 {
   margin-left: 10px;
   padding: 5px;
+
 }
 
 #cargo
@@ -617,7 +622,15 @@ figure{
 }
 /*# sourceMappingURL=style.css.map */
 
-#button_recortar.text{
-  color: #0095da;
+#button_recortar{
+  color: #fafafa;
+  background-color: #0095DA;
+  border-radius: 10px;
+  padding:10px;
+}
+
+#button_recortar:hover{
+  background-color: #044664;
+  cursor: pointer;
 }
 
