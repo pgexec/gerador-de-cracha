@@ -59,7 +59,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: red;
+  background-color: rgb(255, 255, 255);
+  
 }
 
 #cidade
@@ -153,6 +154,7 @@
 
 /* mobile do chefin */
 @media (max-width: 576px) {
+  
     .main .content .profile {
       width: 100%;
     }
@@ -165,12 +167,11 @@
       padding: 0;
       margin: 0;
       width:100%;
-      background-color: palegreen;
     }
     
   
     label{
-      font-size: 25px;
+      font-size: 20px;
       margin: 5px;
       margin-bottom: 10px;
     }
@@ -194,7 +195,6 @@
       width: 100%;
       height: 100%;
       margin: 0;
-      background-color: red;
     }
 
     .content
@@ -212,6 +212,7 @@
     }
     .input
     {
+      
       display: flex;
       flex-direction: column;
     }
@@ -232,8 +233,28 @@
     {
       width: 360px;
       height: 630px;
+      
+    }
+
+    #cargo
+    {
+      font-size: 25px;
+      padding: 10px;
+    }
+    #setor
+    {
+      padding: 10px;
+      font-size:25px;
+      width: 6em;
+      
     }
 }
+
+label{
+  font-size: 20px;
+}
+
+
 
 @media (max-width: 576px) {
   .main .content .profile .foto {
@@ -429,19 +450,14 @@
 }
 
 .main .content.preview {
-  
-  background-size: cover;
-  background-position: center;
   width: 100%;
   height: 100%;
- 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #ffffff;
   border: none;
-  background-color: #6207eb;
-
 }
 
 
@@ -473,8 +489,10 @@
 
 #cargo
 {
+  width: 14em;
   margin-left: 10px;
   cursor: pointer;
+  padding: 6px;
   
 }
 .assinatura
@@ -484,7 +502,6 @@
   justify-content: center;
   gap: 20px;
 }
-
 
 
 .cidade-estado .cargo{
@@ -512,7 +529,7 @@ figure{
 
 /* container com fundo do crachá */
 .main .content .sign-container {
-  width: 400px;
+  width: 380px;
   height: 700px;
   display: flex;
   align-items: center;
@@ -586,7 +603,8 @@ figure{
 
 
 .barra
-{margin-left: 10px;
+{
+  margin-left: 15px;
   margin-right: 10px;
   color: #ffffff;
   font-weight: 700;
@@ -617,10 +635,6 @@ figure{
           justify-content: center;
   gap: 0px;
 }
-
-
-
-
 
 
 .btn {
@@ -689,20 +703,18 @@ figure{
 
 .btn.primary {
   background-color: #0095da;
-  width: 50%;
+  width: 84%;
 }
 
 .btn.primary .text {
   color: #FFFFFF;
 }
 
-.btn.secondary {
-  /* background-color: transparent; */
-  border: 1px solid #000000;
-}
+
 .btn.secondary
 {
   background-color: #ffffff;
+  border: #000000 solid 2px;
 }
 
 
@@ -750,11 +762,12 @@ figure{
   border-radius: 10px;
   padding:10px;
   font-size: 20px;
+  cursor: pointer;
 }
 
 #button_recortar:hover{
   background-color: #c7c7c7;
-  cursor: pointer;
+  
 }
 
 .delete{
@@ -762,8 +775,12 @@ figure{
   background-color: #ffffff;
   border-radius: 10px;
   padding:10px;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 10px;
   color: #000000;
+  cursor: pointer;
+}
 
+.delete:hover{
+  background-color: #c7c7c7;
 }
