@@ -68,7 +68,6 @@ $(function () {
     function crop(image)
     {
         return new Cropper(image, {
-            dragmode: 'move',
             viewMode: 1,
             aspectRatio: 3 / 4,
             cropBoxResizable:true,
@@ -115,12 +114,8 @@ $(function () {
             $(".msg .text").text("Escolha uma imagem menor que 3MB");
             return false;
         }
-        
-
         if (!file) return false;
-        
         return URL.createObjectURL(file);
-        
     }
 
    
@@ -153,6 +148,7 @@ $(function () {
                         height:400,
                     }
                 );
+                cropper.destroy();
                 let croppedImage = croppedCanvas.toDataURL();
                 imgAssinatura.attr("src", croppedImage);      
             })
