@@ -26,7 +26,7 @@ $(function () {
         gerarImagem($(".nome").text());
     });
 
-
+    
 
 
     
@@ -49,8 +49,6 @@ $(function () {
         cidade.innerHTML = options;
     })
     
-
-
 
     window.addEventListener('load', async()=>{
         const request = await fetch(ulrUF);
@@ -83,7 +81,6 @@ $(function () {
 
     
     
-
     // ESSA FUNÇÃO É PARA GERAR A IMAGEM PARA BAIXAR BASICAMENTE
     function gerarImagem(nome) {
         window.devicePixelRatio = 2;
@@ -103,12 +100,14 @@ $(function () {
             a.remove();
         });
     }
-
+    
+    
+    
     // mostra o preview da imagem selecionada
     function previewImageUpload(fileInput) {
         const input = document.querySelector(fileInput);
         let file = input.files[0];
-
+        
         if (file.size > 113145728) {
             $(".msg").addClass("on");
             $(".msg .text").text("Escolha uma imagem menor que 3MB");
@@ -117,19 +116,19 @@ $(function () {
         if (!file) return false;
         return URL.createObjectURL(file);
     }
-
-   
-
+    
+    
+    
     let cropper;
     //onde coloca a imagem no site
     $("#uploadPhoto").on("change", function () {
         const urlImage = previewImageUpload("#uploadPhoto");
         const imgPreview = $(".img-preview");
         const imgAssinatura = $(".img-assinatura");
-       
+        
         
         if (!urlImage) return;
-
+        
         imgPreview.attr("src", urlImage);
         //aonde implantei o cropper     
         setTimeout(()=>{ 
@@ -139,52 +138,54 @@ $(function () {
             }
             cropper = crop($(".img-preview")[0]);
             let privewCrop = document.querySelector("#img-assinatura");
-
+            
+            $(".delete").css("display", "block");
             buttonRecortar.addEventListener('click', event =>{
-
+                
                 let croppedCanvas = cropper.getCroppedCanvas(
                     {
                         width:300,
                         height:400,
                     }
-                );
-                cropper.destroy();
-                let croppedImage = croppedCanvas.toDataURL();
-                imgAssinatura.attr("src", croppedImage);      
-            })
+                    );
+                    cropper.destroy();
+                    let croppedImage = croppedCanvas.toDataURL();
+                    imgAssinatura.attr("src", croppedImage); 
+                    $(".delete").css("display", "none");
+                })
                 
-        },200)
-        
-        $(".delete").addClass("active");
-        $(".add-foto .text").text("Alterar foto");  
-           
-    });
+            },200)
 
-    $(".delete").click(function(){
+            $(".delete").addClass("active");
+            $(".add-foto .text").text("Alterar foto");  
+            
+        });
         
+        $(".delete").click(function(){
+            
+            
+            const imgPreview = $(".img-preview");
+            const imgAssinatura = $(".img-assinatura");
+            var baseImage = "./assets/img/profile.png";
+            var signatureImage = "./assets/img/model-profile.png";
+            
         
-        const imgPreview = $(".img-preview");
-        const imgAssinatura = $(".img-assinatura");
-        var baseImage = "./assets/img/profile.png";
-        var signatureImage = "./assets/img/model-profile.png";
+            
+            imgPreview.attr("src", baseImage);
+            imgAssinatura.attr("src", signatureImage);
+            $("#uploadPhoto").val("");
+            $(this).removeClass("active");
+            $(".add-foto .text").text("Adicionar foto");
+            
+            if(cropper)
+            {
+                cropper.destroy();
+                cropper = null;
+            }
+        });
         
-        
-    
-        imgPreview.attr("src", baseImage);
-        imgAssinatura.attr("src", signatureImage);
-        $("#uploadPhoto").val("");
-        $(this).removeClass("active");
-        $(".add-foto .text").text("Adicionar foto");
-
-        if(cropper)
-        {
-            cropper.destroy();
-            cropper = null;
-        }
-    });
-
-    // define as máscaras de formulário
-    var SPMaskBehavior = function (val) {
+        // define as máscaras de formulário
+        var SPMaskBehavior = function (val) {
             return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
         },
         spOptions = {
@@ -192,9 +193,9 @@ $(function () {
                 field.mask(SPMaskBehavior.apply({}, arguments), options);
             }
         };
-
+        
     $('.mask-phone').mask(SPMaskBehavior, spOptions);
-
+    
 });
 
 
@@ -233,6 +234,9 @@ function alertCaracter(nome)
 nome.addEventListener('input', function(){
     alertCaracter(nome);
 })
+
+let ButtonDelete = document.querySelector('.delete');
+
 
 
 

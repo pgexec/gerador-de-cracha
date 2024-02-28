@@ -134,6 +134,9 @@
   margin-bottom: 40px;
 }
 
+.delete{
+  display: none;
+}
 
 
 .main .content .profile {
@@ -153,6 +156,7 @@
     .main .content .profile {
       width: 100%;
     }
+    
     .inner-container
     {
       display: flex;
@@ -163,11 +167,27 @@
       width:100%;
       background-color: palegreen;
     }
+    
+  
+    label{
+      font-size: 25px;
+      margin: 5px;
+      margin-bottom: 10px;
+    }
     .main
     {
       width: 100%;
       padding: 0;
       margin: 0;
+
+    }
+    .delete{
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding:10px;
+      font-size: 20px;
+      border-radius: 10px;
 
     }
     .main .content.preview {
@@ -181,23 +201,26 @@
     {
       display: flex;
       flex-direction: column;
-      padding: 100px;
       align-items: center;
       justify-content: center;
       background-color: #0095DA;
-      height: 65em;
+      height: 56em;
     }
-   
-
+    .form
+    {
+      padding-bottom: 10em;
+    }
     .input
     {
       display: flex;
       flex-direction: column;
     }
+    
     #button_recortar
     {
       width: 100%;
     }
+
     .profile
     {
       display: flex;
@@ -679,13 +702,13 @@ figure{
 }
 .btn.secondary
 {
-  background-color: #0095DA;
+  background-color: #ffffff;
 }
 
 
 .btn.secondary:hover
 {
-  background-color: #025e88;
+  background-color: #979797;
 }
 
 .btn.secondary::after {
@@ -693,7 +716,8 @@ figure{
 }
 
 .btn.secondary .text {
-  color: #ffffff;
+  color: #000000;
+  font-size: 20px;
 }
 
 .btn.disabled, .btn:disabled {
@@ -721,14 +745,25 @@ figure{
 /*# sourceMappingURL=style.css.map */
 
 #button_recortar{
-  color: #fafafa;
-  background-color: #0095DA;
+  color: #000000;
+  background-color: #ffffff;
   border-radius: 10px;
   padding:10px;
+  font-size: 20px;
 }
 
 #button_recortar:hover{
-  background-color: #044664;
+  background-color: #c7c7c7;
   cursor: pointer;
 }
 
+.delete{
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding:10px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: #000000;
+
+}

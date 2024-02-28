@@ -31,10 +31,10 @@
                     <input type="file" id="uploadPhoto" accept="image/*" hidden>
                     <figure class="foto">
                         <img class="img-preview" src="./assets/img/profile.png" alt="Perfil">
-                        <div class="delete">
-                            <span class="material-symbols-rounded icon">delete</span> Remover
-                        </div>
                     </figure>
+
+                    <button  class="delete" class="material-symbols-rounded icon">delete</button>
+
                     <label class="btn secondary md add-foto" for="uploadPhoto">
                         <div class="text">Adicionar foto</div>
                     </label>
@@ -61,7 +61,9 @@
                                 <div class="input" id="cidade">
                                     
                                     <label for="cargo">Cidade:</label>
-                                    <select  type="text" id="cargo" placeholder="Cargo" required ></select>   
+                                    <select  type="text" id="cargo" placeholder="Cargo" required >
+                                        <option value="">Cidades</option>
+                                    </select>   
                                 </div>  
                         </div>
                     </div>
