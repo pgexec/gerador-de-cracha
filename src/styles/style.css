@@ -160,7 +160,7 @@
 }
 
 /* mobile do chefin */
-@media (max-width: 576px) {
+@media screen and (max-width: 360px) and (max-width:760px) {
   
     .main .content .profile {
       width: 100%;
@@ -174,6 +174,12 @@
       padding: 0;
       margin: 0;
       width:100%;
+      
+    }
+
+    .assinatura
+    {
+      overflow: hidden;
     }
     
   
@@ -191,8 +197,8 @@
       width: 100%;
       padding: 0;
       margin: 0;
-
     }
+
     .delete{
       width: 100%;
       background-color: #ffffff;
@@ -205,7 +211,6 @@
     .main .content.preview {
       width: 100%;
       height: 100%;
-      margin: 0;
     }
 
     .content
@@ -215,7 +220,8 @@
       align-items: center;
       justify-content: center;
       background-color: #0095DA;
-      height: 56em;
+      height: 100%;
+      
     }
     .form
     {
@@ -242,7 +248,7 @@
 
     .main .content .sign-container 
     {
-      width: 360px;
+      width: 300px;
       height: 630px;
       
     }
@@ -256,7 +262,7 @@
     {
       padding: 10px;
       font-size:25px;
-      width: 6em;
+      width: 50%;
       
     }
 }
@@ -540,7 +546,7 @@ figure{
 
 /* container com fundo do crachá */
 .main .content .sign-container {
-  width: 380px;
+  width: 410px;
   height: 700px;
   display: flex;
   align-items: center;
