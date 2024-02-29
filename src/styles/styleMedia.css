@@ -256,3 +256,58 @@
       width: 100%;
     }
   }
+
+
+  @media screen and (max-width:1366px)
+  {
+      .main .content .sign-container 
+    {
+      width: 25rem;
+      height:50rem;
+      
+    }
+    .top{
+      margin: 0.8rem;
+    }
+    .img-assinatura
+    {
+        margin-top: 56.6px;
+        width: 14.6rem;
+        height:20.1rem;
+        
+    }
+    .foto
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15rem;
+    }
+    .form{
+      margin-left: 4rem;
+    }
+
+    #nome
+    {
+      width: 25rem;
+    }
+    .content.dados
+    {
+      width: 65%;
+      padding: 5rem;
+      padding-right: 15rem;
+    }
+  }
+
+  @media screen and (max-width:1920px)
+  {
+    .form{
+      margin-left: 8rem;
+    }
+
+    #nome
+    {
+      width: 20rem;
+    }
+   
+  }

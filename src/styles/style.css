@@ -12,6 +12,12 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
+
+body
+{
+  background-color: #f1f1f1;
+}
+
 .nome
 {
   display: flex;
@@ -66,7 +72,7 @@
   justify-content: center;
   flex-direction: row;
   justify-content: space-around;
-  background-color: rgb(255, 255, 255);
+  background-color: #f1f1f1;
   
 }
 
@@ -80,6 +86,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #f1f1f1;
 }
 
 .main .title {
@@ -125,7 +132,8 @@
 }
 
 .content.dados{
-  background:linear-gradient(to bottom,#0077db,#008dda,#019aec);
+  background:linear-gradient(to bottom,#0077db,#008dda,#02a1f79c);
+  height: 50%;
 }
 
 
@@ -152,7 +160,7 @@
 
 
 .main .content .profile {
-  width: 192px;
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,7 +180,8 @@ label{
 
 .main.content .profile .foto {
   width: 192px;
-  height: 192px;
+  height: 200px;
+  padding: 10px;
   border-radius: 8px;
   overflow: hidden;
   display: -webkit-box;
@@ -228,6 +237,7 @@ label{
   min-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+     
 }
 
 .main .content .form {
@@ -240,6 +250,7 @@ label{
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 24px;
+  margin-left: rem;
 }
 
 .main .content .form .row {
@@ -327,7 +338,7 @@ label{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   border: none;
 }
 
@@ -424,6 +435,7 @@ figure{
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border: #ffce00 solid 5px;
 }
 
 .sign-container
@@ -441,6 +453,7 @@ figure{
 .foto
 {
   border: solid 5px white;
+  width: 14rem;
 }
 
 .nome
@@ -657,6 +670,5 @@ figure{
 .delete:hover{
   background-color: #c7c7c7;
 }
-
 
 

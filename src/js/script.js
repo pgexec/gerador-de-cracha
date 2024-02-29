@@ -12,24 +12,24 @@ $(function () {
             $(".nome").text($(this).val().toUpperCase());
         }    
     });
-
+    
     $("#cargo").on("input", function () {
         $(".cargo").text($(this).val().toUpperCase());
     });
-
+    
     $("#setor").on("input", function () {
         $(".setor").text($(this).val());
     });
-
-
+    
+    
     $(".baixar").on("click", function (e) {
         gerarImagem($(".nome").text());
     });
-
+    
+    
+    
     
 
-
-    
     const buttonRecortar = document.getElementById('button_recortar');
 
     const ulrUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/';
@@ -67,32 +67,37 @@ $(function () {
     {
         return new Cropper(image, {
             viewMode: 1,
+            center:true,
             aspectRatio: 3 / 4,
             cropBoxResizable:true,
             preview:'#img-preview',
-            background:true,
-            // data:{
-            //     width:300,
-            //     height:400,
-            // }
-
+            background:false,
         })
     }
 
-    
+  
     
     // ESSA FUNÇÃO É PARA GERAR A IMAGEM PARA BAIXAR BASICAMENTE
     function gerarImagem(nome) {
-        window.devicePixelRatio = 2;
-        html2canvas(document.querySelector('.sign-container'), {
-            width: 400,
-            height: 700,
+
+        let altura = 700;
+        let largura = 400;
+
+        if(window.innerWidth <= 1366)
+        {
+            altura = 800;
+            largura = 400;
+        }
+           html2canvas(document.querySelector('.sign-container'), {
+            width: largura,
+            height: altura,
             backgroundColor: null,
-            scale: 3
+            scale: 5,
+            preserveDrawingBuffer: true
         }).then(function (canvas) {
             var name = 'assinatura-' + nome.toLowerCase().replace(" ", "-");
             let a = document.createElement('a');
-            a.href = canvas.toDataURL("image/png", 1.0);
+            a.href = canvas.toDataURL("image/png",1.0);
             a.download = name + '.png';
             a.style.display = 'none';
             document.body.appendChild(a);
@@ -148,9 +153,9 @@ $(function () {
                     }
                     );
                     cropper.destroy();
+                    $(".delete").css("display", "none");
                     let croppedImage = croppedCanvas.toDataURL();
                     imgAssinatura.attr("src", croppedImage); 
-                    $(".delete").css("display", "none");
                 })
                 
             },200)
@@ -234,7 +239,6 @@ nome.addEventListener('input', function(){
     alertCaracter(nome);
 })
 
-let ButtonDelete = document.querySelector('.delete');
 
 
 
