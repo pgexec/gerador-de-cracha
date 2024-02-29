@@ -1,0 +1,256 @@
+@media screen and (max-width: 360px) and (max-width:760px) {
+  
+    .main .content .profile {
+      width: 100%;
+    }
+    
+    .inner-container
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      width:100%;
+      
+    }
+
+    .assinatura
+    {
+      overflow: hidden;
+    }
+    
+  
+    label{
+      font-size: 20px;
+      margin: 5px;
+      margin-bottom: 10px;
+    }
+
+    .main
+    {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .delete{
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding:10px;
+      font-size: 20px;
+      border-radius: 10px;
+
+    }
+    .main .content.preview {
+      width: 100%;
+      height: 100%;
+    }
+
+    .content
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #0095DA;
+      height: 100%;
+      
+    }
+    .form
+    {
+      padding-bottom: 10em;
+    }
+
+    .input
+    {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #button_recortar
+    {
+      width: 100%;
+    }
+
+    .profile
+    {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main .content .sign-container 
+    {
+      width: 300px;
+      height: 630px;
+      
+    }
+
+    #cargo
+    {
+      font-size: 25px;
+      padding: 10px;
+    }
+    #setor
+    {
+      padding: 10px;
+      font-size:25px;
+      width: 50%;
+      
+    }
+}
+
+@media screen and (max-width: 390px) and (max-width:844px) {
+  
+  .main .content .profile {
+    width: 100%;
+  }
+  
+  .inner-container
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width:100%;
+    
+  }
+
+  .assinatura
+  {
+    overflow: hidden;
+  }
+  
+
+  label{
+    font-size: 20px;
+    margin: 5px;
+    margin-bottom: 10px;
+  }
+
+  .main
+  {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .delete{
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding:10px;
+    font-size: 20px;
+    border-radius: 10px;
+
+  }
+  .main .content.preview {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0095DA;
+    height: 100%;
+    
+  }
+  .form
+  {
+    padding-bottom: 10em;
+  }
+
+  .input
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #button_recortar
+  {
+    width: 100%;
+  }
+
+  .profile
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main .content .sign-container 
+  {
+    width: 300px;
+    height: 630px;
+    
+  }
+
+  #cargo
+  {
+    font-size: 25px;
+    padding: 10px;
+  }
+  #setor
+  {
+    padding: 10px;
+    font-size:25px;
+    width: 50%;
+    
+  }
+}
+
+
+@media (max-width: 576px) {
+    .main .content .profile .foto {
+      width: 100%;
+      aspect-ratio: 1/1;
+    }
+  } 
+  
+  @media (max-width: 768px) {
+    .main .title {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 32px;
+    }
+  } 
+  
+   @media  (max-width: 768px) {
+    .main .content .form .row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }  
+  }
+  
+  @media (max-width: 768px) {
+    .main .content {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .main .content .profile {
+      width: 100%;
+    }
+  }
