@@ -119,9 +119,13 @@
 
 .content
 {
-  background-color:#0095dae5; 
+  background-color:#008dda; 
   height: 400px;
   width: 10%;
+}
+
+.content.dados{
+  background:linear-gradient(to bottom,#0077db,#008dda,#019aec);
 }
 
 
@@ -164,10 +168,6 @@
 label{
   font-size: 20px;
 }
-
-
-
-
 
 
 .main.content .profile .foto {
@@ -406,7 +406,7 @@ figure{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('CRACHAPP.png');
+  background-image: url('crachaNovo.png');
   background-size: cover;
   background-position: center;
   z-index: 5;
@@ -574,7 +574,7 @@ figure{
 
 .btn.primary {
   background-color: #0095da;
-  width: 84%;
+  width: 48%;
 }
 
 .btn.primary .text {
@@ -586,6 +586,7 @@ figure{
 {
   background-color: #ffffff;
   border: #000000 solid 2px;
+  width: 100%;
 }
 
 
@@ -624,7 +625,7 @@ figure{
 }
 
 .link.primary {
-  color: #0095da;
+  color: #008dda;
 }
 /*# sourceMappingURL=style.css.map */
 
@@ -656,3 +657,6 @@ figure{
 .delete:hover{
   background-color: #c7c7c7;
 }
+
+
+

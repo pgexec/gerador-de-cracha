@@ -70,7 +70,7 @@ $(function () {
             aspectRatio: 3 / 4,
             cropBoxResizable:true,
             preview:'#img-preview',
-            background:false,
+            background:true,
             // data:{
             //     width:300,
             //     height:400,
@@ -126,7 +126,6 @@ $(function () {
         const imgPreview = $(".img-preview");
         const imgAssinatura = $(".img-assinatura");
         
-        
         if (!urlImage) return;
         
         imgPreview.attr("src", urlImage);
@@ -160,7 +159,7 @@ $(function () {
             $(".add-foto .text").text("Alterar foto");  
             
         });
-        
+
         $(".delete").click(function(){
             
             
