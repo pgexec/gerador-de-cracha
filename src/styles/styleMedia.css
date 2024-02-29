@@ -1,3 +1,5 @@
+
+
 @media screen and (max-width: 360px) and (max-width:760px) {
   
     .main .content .profile {
@@ -193,7 +195,7 @@
 
   .main .content .sign-container 
   {
-    width: 300px;
+    width: 360px;
     height: 630px;
     
   }
