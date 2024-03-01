@@ -14,7 +14,9 @@ $(function () {
     });
     
     $("#cargo").on("input", function () {
+        
         $(".cargo").text($(this).val().toUpperCase());
+
     });
     
     $("#setor").on("input", function () {
@@ -123,7 +125,7 @@ $(function () {
     }
     
     
-    
+    let buttonDelete = document.querySelector('.delete');
     let cropper;
     //onde coloca a imagem no site
     $("#uploadPhoto").on("change", function () {
@@ -153,14 +155,17 @@ $(function () {
                     }
                     );
                     cropper.destroy();
-                    $(".delete").css("display", "none");
                     let croppedImage = croppedCanvas.toDataURL();
                     imgAssinatura.attr("src", croppedImage); 
+                    $(".delete").css("display", "none");
                 })
                 
             },200)
 
             $(".delete").addClass("active");
+            buttonDelete.addEventListener('click', function(){
+                buttonDelete.style.display = 'none';
+            })
             $(".add-foto .text").text("Alterar foto");  
             
         });
