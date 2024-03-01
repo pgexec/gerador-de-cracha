@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 700;
   color: rgb(0, 0, 0);
 
 }
@@ -209,26 +210,22 @@
       margin: 0;
     }
 
-    .content
+    .content.dados
     {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       background-color: #0095DA;
-      height: 56em;
+      height: auto;
+      overflow: hidden;
     }
     .form
     {
       padding-bottom: 10em;
     }
 
-    .input
-    {
-      display: flex;
-      flex-direction: column;
-    }
-    
+
     #button_recortar
     {
       width: 100%;
@@ -265,6 +262,10 @@
       display: flex;
       flex-direction: column;
     
+    }
+    .figure
+    {
+      width: 5%;
     }
 
     
@@ -538,13 +539,14 @@ label{
 
 
 
-/* container pai da imagem da pessoa no crachá */
+/* container que contém os conteúdos de dentro do crachá*/
 figure{
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* background-color: red; */
+  width: 100%;
+
 
 }
 
@@ -552,6 +554,7 @@ figure{
 .main .content .sign-container {
   width: 380px;
   height: 700px;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -559,7 +562,7 @@ figure{
   background-image: url('crachaNovo.png');
   background-size: cover;
   background-position: center;
-  z-index: 5;
+ 
  
 }
 
@@ -567,7 +570,7 @@ figure{
 /* imagem que é apresentada no crachá */
 .img-assinatura
 {
-  margin-top: 50px;
+  margin-top: 6rem;
   width: 240px;
   height: 320px;
   display: flex;
@@ -584,11 +587,9 @@ figure{
   align-items: center;
   justify-content: center;
   width: 200px;
-  height: 100px;
-  z-index: auto;
-  position: relative;
-  
+  height: 100px; 
 }
+
 .foto
 {
   border: solid 5px white;
@@ -613,13 +614,14 @@ figure{
 
 /* DIV nome da pessoa, cidade e estado */
 .top{
-  width: 40%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: black;
   gap: 14px;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  
 
   /* background-color: #5619B4; está aqui para DEBUG */
 }
@@ -660,10 +662,12 @@ figure{
 }
 
 
+
+
 .btn {
   border: none;
   cursor: pointer;
-  background-color: #CDD6E0;
+  background-color: #0095DA;
   padding: 8px 24px;
   display: -webkit-box;
   display: -ms-flexbox;

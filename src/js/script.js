@@ -29,8 +29,7 @@ $(function () {
     });
     
     
-    
-    
+
 
     const buttonRecortar = document.getElementById('button_recortar');
 
@@ -249,15 +248,3 @@ nome.addEventListener('input', function(){
 
 
 
-
-// const reader = new FileReader;
-
-// reader.onload = function(Event)
-// {
-//     const previewImage = document.createElement('img');
-//     previewImage.Id = 'preview-image';
-//     previewImage.src = Event.target.result;
-//     h2Avatar.insertAdjacentElement('afterend', previewImage);
-// }
-
-// reader.readAsDataURL(avatarImage.files[0]);
