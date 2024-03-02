@@ -29,7 +29,8 @@ $(function () {
     });
     
     
-
+    
+    
 
     const buttonRecortar = document.getElementById('button_recortar');
 
@@ -76,6 +77,23 @@ $(function () {
         })
     }
 
+    let progressWidth = 0; // Inicializa a largura da barra de progresso como 0%
+
+
+
+// Evento de mudança para o campo select
+$('#setor').on('change', function() {
+    progressWidth = $(this).val() === '' ? progressWidth - 33 : progressWidth + 33;
+    updateProgressBar(progressWidth);
+});
+
+// Função para atualizar a barra de progresso
+function updateProgressBar(width) {
+    width = Math.max(0, Math.min(100, width)); // Garante que a largura esteja entre 0% e 100%
+    $('.progress-bar').css('width', width + '%');
+    $('.progress-bar').text(width + '%');
+}
+
   
     
     // ESSA FUNÇÃO É PARA GERAR A IMAGEM PARA BAIXAR BASICAMENTE
@@ -106,7 +124,7 @@ $(function () {
             a.remove();
         });
     }
-    
+
     
     
     // mostra o preview da imagem selecionada
@@ -239,9 +257,9 @@ function alertCaracter(nome)
 
 
 
-nome.addEventListener('input', function(){
-    alertCaracter(nome);
-})
+
+
+
 
 
 

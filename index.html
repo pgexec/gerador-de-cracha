@@ -32,6 +32,7 @@
         <div class="inner-container">
             <section class="content dados">
                 <div class="profile">
+                    
                     <input type="file" id="uploadPhoto" accept="image/*" hidden>
                     <figure class="foto">
                         <img class="img-preview" src="./assets/img/profile.png" alt="Perfil">
@@ -43,6 +44,7 @@
                         <div class="text">Adicionar foto</div>
                     </label>
                     <button id="button_recortar">Recortar</button>
+                    <div class="alertRecorte"></div>
                 </div>
                 <form class="form">
                     <div class="row">
@@ -68,33 +70,15 @@
                                 <select  type="text" id="cargo" placeholder="Cargo" required >
                                     <option value="">Cidades</option>
                                 </select>   
-                            </div>  
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                Crachás
-                                </button>
-                                <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                                </ul>
-                            </div>
+                            </div>     
                         </div>
                     </div>
-                    <div class="row">
-                        <!-- <div class="input">
-                            <input type="email" id="email" placeholder="E-mail" required>
-                            <label for="email">E-mail</label>
-                        </div> -->
-                    </div>
+                    
                 </form>
             </section>
             <div class="content preview">
                 <div class="sign-container">
                     <figure>
-                        <!-- <div id="preview-img" class="preview-profile"></div> -->
                         <img  class="img-assinatura" src="./assets/img/model-profile.png" alt="Logo">
                         <div class="top">
                             <div class="name">
