@@ -31,6 +31,7 @@
         
         <div class="inner-container">
             <section class="content dados">
+                
                 <div class="profile">
                     
                     <input type="file" id="uploadPhoto" accept="image/*" hidden>
@@ -47,17 +48,15 @@
                     <div class="alertRecorte"></div>
                 </div>
                 <form class="form">
-                    <div class="row">
+                    <div class="">
                         <div class="input">
-                            <input type="text" id="nome" placeholder="Nome" required maxlength="20"  >
-                            <label for="nome">Nome</label>
+                           <div class="container-titulo"><h1 class="h1">Preencha seus dados para fazer seu crachá</h1></div>
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" placeholder="Insera seu nome" required maxlength="20" >
+                            <div class="alert"></div>
+                            
                         </div>
-                        <!-- <div class="input">
-                            <input type="text" id="telefone" placeholder="Telefone" required class="mask-phone">
-                            <label for="telefone">Telefone</label>
-                        </div> -->
                     </div>
-                    <div class="alert"></div>
                     <div class="row">
                         <div class="input">
                             <label for="uf">Estado: </label>

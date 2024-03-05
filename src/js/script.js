@@ -239,9 +239,9 @@ function alertCaracter(nome)
     if(numb_string == 20)
     {
         nome.style.borderColor ="red";
+        spanAlert.innerHTML = "você chegou no limite de 20 caracteres";
         spanAlert.style.color ='red';
         spanAlert.style.fontSize = "10px";
-        spanAlert.innerHTML = "você chegou no limite de 20 caracteres";
         if(!spanAlert.parentNode)
         {
             alert.insertAdjacentElement("afterend", spanAlert); 
@@ -255,7 +255,10 @@ function alertCaracter(nome)
     }
 }
 
-
+nome.addEventListener('input', function()
+{
+    alertCaracter(nome);
+})
 
 
 
