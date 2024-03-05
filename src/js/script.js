@@ -100,12 +100,12 @@ function updateProgressBar(width) {
     function gerarImagem(nome) {
 
         let altura = 700;
-        let largura = 400;
+        let largura = 380;
 
         if(window.innerWidth <= 1366)
         {
             altura = 800;
-            largura = 400;
+            largura = 380;
         }
            html2canvas(document.querySelector('.sign-container'), {
             width: largura,

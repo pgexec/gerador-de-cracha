@@ -189,6 +189,20 @@
       margin-bottom: 10px;
     }
 
+    .h1
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center ;
+    }
+    .container-titulo
+    {
+      display: flex;
+      justify-content: center;
+      align-items:center ;
+      margin-left: 2rem;
+    }
+
     .main
     {
       display:flex;
@@ -233,6 +247,12 @@
       justify-content: center;
     }
 
+    .container-titulo
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .input
     {
       display: flex;
@@ -282,6 +302,7 @@
     {
       width: 5%;
     }
+    
 
     
 }
@@ -310,6 +331,14 @@ label{
     padding: 0 32px;
   }
 } 
+
+  @media screen and (max-width:1920px)
+  {
+    .baixar.btn.primary
+    {
+      width: 55%;
+    }
+  }
 
  @media  (max-width: 768px) {
   .main .content .form .row {
